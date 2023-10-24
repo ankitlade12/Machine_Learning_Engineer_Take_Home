@@ -17,9 +17,18 @@ To get started you need to install docker desktop and keep it running
     docker run -p 8501:8501 app
     ```
 
-4) To stop the Docker container, you can use Ctrl+C in your terminal
+4) To view Streamlit app in broswer use
+    ```
+    localhost:8501
+    ```
+    OR
+    ```
+    Double-click Network URL
+    ```
 
-5) To remove the container use:
+5) To stop the Docker container, you can use Ctrl+C in your terminal
+
+6) To remove the container use
     ```
     docker image rm -f app
     ```
