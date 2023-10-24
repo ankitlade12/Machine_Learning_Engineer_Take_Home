@@ -1,7 +1,7 @@
 # Fetch Rewards Take-home Exercise - Machine Learning Engineer
 
 ## Getting Started
-
+To get started you need to install docker desktop and keep it running    
 1) Clone repo locally
     ```
     git clone https://github.com/ankitlade12/Machine_Learning_Engineer_Take_Home.git
