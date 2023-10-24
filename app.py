@@ -10,11 +10,10 @@ from tensorflow.keras.models import load_model
 model = load_model('final_model.h5')  # Replace with the path to your model file.
 
 # Load and preprocess your 2021 data
-data_2021 = pd.read_csv('data_daily.csv')  # Replace '2021_receipts_data.csv' with your data file.
+data_2021 = pd.read_csv('data_daily.csv') 
 data_2021['# Date'] = pd.to_datetime(data_2021['# Date'])
 data_2021.set_index('# Date', inplace=True)
 monthly_data_2021 = data_2021['Receipt_Count'].resample('M').sum()
-#monthly_data_2021_m = data_2021['Receipt_Count'].resample('M').sum()
 scaler = MinMaxScaler()
 normalized_data_2021 = scaler.fit_transform(monthly_data_2021.values.reshape(-1, 1))
 
@@ -32,6 +31,7 @@ def generate_monthly_predictions(model, current_seq):
 
 # Loop over each month in 2022
 for _ in range(12):
+    
     # Create the current sequence for prediction
     current_seq = np.array([simulated_data_2022[-seq_length:]]).reshape(1, seq_length, 1)
     
